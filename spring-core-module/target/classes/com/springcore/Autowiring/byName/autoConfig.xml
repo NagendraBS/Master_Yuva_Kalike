@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					https://www.springframework.org/schema/beans/spring-beans.xsd 
+					http://www.springframework.org/schema/context 
+					http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.Autowiring.byName.Address" name="address">
+	<property name="street" value="LIG-Bommanakatte"/>
+	<property name="city" value="Bhadravathi"/>
+	
+	</bean>
+
+
+<!-- Here, Spring Container will redirect to the "Emp" Class and checks for member variables 
+and it will hold that object of member variable , named as "address" in our Scenario.
+By Returning to this XML File it will Check weather any bean created with the Name of "address"
+If the bean is Created in the name of "address" in this XML file 
+then, the object of  bean named as "address" will directly Injected to the "Emp" Class. -->
+
+<!-- We have to makesure the the BeanName(Need to be injected) and Member Variable Name in Emp Class shoul be Maintained Same OR Else it will throw NULL -->
+
+
+	<bean class="com.springcore.Autowiring.byName.Emp" name="emp1" autowire="byName">
+	
+	</bean>
+
+</beans>
+					
