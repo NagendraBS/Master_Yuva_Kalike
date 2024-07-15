@@ -8,6 +8,7 @@ public class CrudOperationsDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrudOperationsDemoApplication.class, args);
+		System.out.println("Iam Spring ! iam Here");
 	}
 
 }
