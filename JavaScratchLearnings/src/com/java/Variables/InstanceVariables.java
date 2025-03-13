@@ -1,9 +1,9 @@
-package java.com.Variables;
+package com.java.Variables;
 
 public class InstanceVariables {
 
 	
-	public String name;
+	public String name ;
 	public int i ;
 	public Integer I;
 
