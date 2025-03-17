@@ -8,9 +8,12 @@ public class StringConcate {
 		
 		//Using concat() method for String Concatenation
 		
-		str = str.concat(" Developer");
+//		str = str.concat(" Developer");
+
 		
 		System.out.println(str);
+	
+		
 	}
 
 }
