@@ -63,8 +63,6 @@ public class StringBuilderMethods {
         System.out.println("Final String: " + result);
 		
 		
-		
-		
 	}
 
 }
