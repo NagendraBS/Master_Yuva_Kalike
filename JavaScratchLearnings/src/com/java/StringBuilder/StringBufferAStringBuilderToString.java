@@ -1,4 +1,4 @@
-package com.java.Variables;
+package com.java.StringBuilder;
 
 public class StringBufferAStringBuilderToString {
 
