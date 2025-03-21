@@ -3,9 +3,9 @@ package com.java.ObjectOrientedProgramming;
 
 class Animal1{
 	// Base class
-    void move() { System.out.println(
+    public void move() { System.out.println(
       "Animal is moving."); }
-    void eat() { System.out.println(
+   public void eat() { System.out.println(
       "Animal is eating."); }
 }
 
@@ -15,12 +15,13 @@ class Dog1 extends Animal1{
 	// move method from Base class is overriden in this
     // method
 	
-	@Override void move()
+	@Override
+	public void move()
     { 
         System.out.println("Dog is running.");
     }
 	
-    void bark() { System.out.println("Dog is barking."); }
+   public void bark() { System.out.println("Dog is barking."); }
 }
 
 public class MethodOverriding {
