@@ -1,6 +1,5 @@
 package com.java.Interface;
 
-
 interface testInterface{
 
     // public, static and final
@@ -21,7 +20,9 @@ class TestClass implements testInterface{
 	
 }
 
-public class Interface {
+	
+
+public class BasicsOF_Interface {
 
 	public static void main(String[] args) {
 
@@ -31,7 +32,4 @@ public class Interface {
 		System.out.println(tc.a);
 		
 	}
-	
-	
-
 }
