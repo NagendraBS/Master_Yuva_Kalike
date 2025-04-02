@@ -11,11 +11,11 @@ public class ArrayList_Main {
 
 		// Declaring the ArrayList with
         // initial size n
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        ArrayList<Integer> al = new ArrayList<Integer>();  // ArrayList Means Resizeable Array Implementation
 
         // Appending new elements at
         // the end of the list
-        for (int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 8; i++)
             al.add(i);
 
         // Printing elements
