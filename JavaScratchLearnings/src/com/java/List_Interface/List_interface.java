@@ -3,6 +3,7 @@ package com.java.List_Interface;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class List_interface {
 
@@ -113,6 +114,7 @@ public class List_interface {
 		
 		//Iterating the Elements Using while Loop
 //		Iterator<String> it = al4.iterator();
+//		ListIterator<String> it = al4.listIterator();
 //		
 //		while(it.hasNext()) {
 //			System.out.println("Elements in the List by While Loop iterator are : " + it.next());
