@@ -12,7 +12,7 @@ public class Vector_Main {
 		
 		// Appending new elements at
         // the end of the list
-		for(int i = 1; i <= 5; i++)
+		for(int i = 1; i <= 10; i++)
 		v.add(i);
 		
 		// Printing elements
