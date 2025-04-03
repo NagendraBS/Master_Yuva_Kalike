@@ -1,4 +1,4 @@
-package com.java.List_Interface;
+package com.java.Interface_List;
 
 import java.util.Vector;
 
