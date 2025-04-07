@@ -8,10 +8,10 @@ public class Priority_Queue {
 
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 
-		pq.add(3);
-		pq.add(4);
 		pq.add(5);
 		pq.add(6);
+		pq.add(3);
+		pq.add(4);
 
 		// Priniting the Priority Queue Elements
 		System.out.println("Priority Queue Elements : " + pq);
