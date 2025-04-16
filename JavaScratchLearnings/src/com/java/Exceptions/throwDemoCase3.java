@@ -6,7 +6,7 @@ public class throwDemoCase3 {
 
 		// "throw" key Work is applicable only for "throwable" types  Not for Normal java Class objects
 		// Error :  Unresolved compilation problem: Test cannot be resolved to a type
-		throw new Test();
+		throw new throwDemoCase3();
 	}
 
 }
