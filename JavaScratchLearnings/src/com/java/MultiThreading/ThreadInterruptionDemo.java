@@ -10,10 +10,7 @@ class MyThread6 extends Thread{
 				System.out.println("I am a Lazy thread");
 				Thread.sleep(2000);
 			}
-		} catch (InterruptedException e) {
-			System.out.println("I Got Interrupted");
-			
-		}
+		} catch (InterruptedException e) { }
 		
 	}
 }
