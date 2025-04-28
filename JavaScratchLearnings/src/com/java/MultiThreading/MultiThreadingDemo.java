@@ -26,11 +26,11 @@ public class MultiThreadingDemo {
 
 		MyThread thread = new MyThread();
 		
-		thread.start();  // If I Use the  "thread.start()",  a new thread will be Created , 
+//		thread.start();  // If I Use the  "thread.start()",  a new thread will be Created , 
 							//that thread will responsible for Executing the job Here
 		
 		// Execution Order Will be Maintained, Since no thread has been Created.
-//		thread.run();    // If I Use "thread.run()" will be Exceuted just like normal method called by mainThread only.
+		thread.run();    // If I Use "thread.run()" will be Exceuted just like normal method called by mainThread only.
 		
 		for(int k = 0 ; k < 10; k++) {
 			System.out.println("Main Thread");
