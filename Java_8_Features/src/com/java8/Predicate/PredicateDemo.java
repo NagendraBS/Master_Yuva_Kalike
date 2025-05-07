@@ -26,8 +26,8 @@ public class PredicateDemo {
 				System.out.println(s1);
 			}	
 		}
-		
-		
+	
+
 		
 		
 	//	case 1
