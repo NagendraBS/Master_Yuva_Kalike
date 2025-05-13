@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					https://www.springframework.org/schema/beans/spring-beans.xsd 
+					http://www.springframework.org/schema/context 
+					http://www.springframework.org/schema/context/spring-context.xsd">
+					
+	<bean id="employee1"
+		class="com.springcore.SetterDependencyInjection.javaCollections.NonStringMap.Employee">
+		<property name="name" value="Nagendra"></property>
+		<property name="employeeID" value="501"></property>
+		<property name="department"
+			value="Department of External Affairs"></property>
+	</bean>
+
+	<bean id="address1"
+		class="com.springcore.SetterDependencyInjection.javaCollections.NonStringMap.Address">
+		<property name="houseNo" value="LIG-29"></property>
+		<property name="pincode" value="577302"></property>
+		<property name="state" value="Karnataka"></property>
+		<property name="country" value="India"></property>
+	</bean>
+
+	<bean id="company1"
+		class="com.springcore.SetterDependencyInjection.javaCollections.NonStringMap.Company">
+		<property name="employees">
+		<map>
+			<entry key-ref="employee1" value-ref="address1"></entry>
+		</map>
+		  </property>
+	</bean>		
+	</beans>

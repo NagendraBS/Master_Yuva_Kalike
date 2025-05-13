@@ -2,7 +2,7 @@ package com.java8.Predicate;
 
 import java.util.function.Predicate;
 
-// If We Have To Test Some boolean Conditions Then We Can go For the "Predicate" Functional Interface
+// If We Have To Test Some boolean Conditions, Then We Can go For the "Predicate" Functional Interface
 
 public class PredicateDemo {
 
@@ -18,7 +18,7 @@ public class PredicateDemo {
 		
 		String[] str = { "Neha", "Nagendra", "Nikhil", "Adhishesha", "Vasuki" };
 		
-		 Predicate<String> ps =  str1 -> str1.charAt(0)=='N';
+		 Predicate<String> ps =  s -> s.charAt(0)=='N';
 		System.out.println("The Strings Starts with 'N' are :");
 		
 		for(String s1 : str) {
