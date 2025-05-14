@@ -3,7 +3,8 @@ package com.java8.MethodANDConstructorReferences;
 public class MethodReference_Demo {
 
 	public static void main(String[] args) {
-		Runnable r = MethodReference_Demo::m1;
+		
+		Runnable r = MethodReference_Demo::m1;   // Using Method Reference
 		
 		Thread t = new Thread(r);
 		t.start();
