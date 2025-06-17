@@ -69,6 +69,7 @@ public class EmployeesSortByNameANDSalary {
 			public int compare(Employee e1, Employee e2) {
 
 				int nameCompare = e1.getName().compareTo(e2.getName());
+				
 				int salaryCompare = Double.compare(e1.getSalary(), e2.getSalary());
 
 				

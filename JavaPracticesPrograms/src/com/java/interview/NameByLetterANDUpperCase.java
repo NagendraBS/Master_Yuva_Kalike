@@ -11,7 +11,7 @@ public class NameByLetterANDUpperCase {
 		List<String> names = Arrays.asList("Nagendra", "nagarjuna", "Hithesh", "Amar", "NAGESH");
 		
 		List<String> fileterdNames = names.stream()
-		.filter(name -> name.toLowerCase().startsWith("N"))
+		.filter(name -> name.startsWith("N"))
 		.map(name -> name.toUpperCase())
 		.collect(Collectors.toList());
 		

@@ -47,6 +47,7 @@ class CustomerSortingComparator
      int NameCompare = customer1.getName().compareTo(
        						customer2.getName());
      
+     
      // If names are the same, compare by age
      int AgeCompare = customer1.getAge().compareTo(
        						customer2.getAge());

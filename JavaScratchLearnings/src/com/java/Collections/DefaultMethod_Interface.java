@@ -1,7 +1,7 @@
-package com.java.Interface;
+package com.java.Collections;
 
 //interface can have Methods from JDK 8 Onwards 
-interface testInterf{
+interface TestInterface{
 	
 	// This is a constant (static and final by default)
 	final int a = 10;
@@ -13,7 +13,7 @@ interface testInterf{
 	
 }
 
-public class DefaultMethod_Interface implements testInterf{
+public class DefaultMethod_Interface implements TestInterface{
 
 	public static void main(String[] args) {
 
