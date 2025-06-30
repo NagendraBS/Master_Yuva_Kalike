@@ -11,7 +11,7 @@ interface Test{
 	}
 }
 
-public class StaticMethod_Interface  implements TestInterface{
+public class StaticMethod_Interface  implements Test{
 
 	public static void main(String[] args) {
 

@@ -20,7 +20,7 @@ public class StringReverse {
 			
 			char ch = value.charAt(i);
 			
-			revString = ch + revString ;
+			revString =  ch + revString  ;
 			
 		}
 		

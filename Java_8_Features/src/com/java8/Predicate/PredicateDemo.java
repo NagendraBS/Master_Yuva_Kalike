@@ -16,9 +16,10 @@ public class PredicateDemo {
 		
 	// Case 3  : To Check the String Starts with the Same Letter
 		
-		String[] str = { "Neha", "Nagendra", "Nikhil", "Adhishesha", "Vasuki" };
+		String[] str = { "Neha", "nagendra", "Nikhil", "Adhishesha", "Vasuki" };
 		
-		 Predicate<String> ps =  s -> s.charAt(0)=='N';
+//		 Predicate<String> ps =  s -> s.toLowerCase().startsWith("n");
+		Predicate<String> ps = s -> s.charAt(0) == 'N';
 		System.out.println("The Strings Starts with 'N' are :");
 		
 		for(String s1 : str) {

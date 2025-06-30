@@ -6,24 +6,22 @@ public class ArrayOfStringsMINandMAX {
 
 		String str = "I am Working under EndavaSolutions";
 		
+		String[] eachWord = str.split(" ");
 		
-		String[] words = str.split("\\s+");
+		String longestWord = "";
 		
-		String longest = "";
-		
-		for(String word : words) {
-		
-            if (word.length() > longest.length()) {
-            	
-            	longest = word;
-            }
-            
-            }
-		
-			System.out.println("longest Word is : " + longest);
-		
+		for( String word : eachWord ) {
+			
+//			System.out.println(word + " ");
+			
+			if(word.length() > longestWord.length()) {
+				longestWord = word;
+			}
+			
 		}
-	
 		
+		System.out.println("Longest Word : " + longestWord);
+
 	}
 
+}

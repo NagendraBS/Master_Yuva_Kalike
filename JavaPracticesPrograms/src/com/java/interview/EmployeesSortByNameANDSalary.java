@@ -72,7 +72,6 @@ public class EmployeesSortByNameANDSalary {
 				
 				int salaryCompare = Double.compare(e1.getSalary(), e2.getSalary());
 
-				
 				if(nameCompare != 0) {
 					
 					return nameCompare;

@@ -2,48 +2,71 @@ package com.java.interview;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class Test {
 
 	 public static void main(String[] args) {
+		 
 	        String[] votes = {
-	            "john", "johnny", "jackie", "johnny", "john", "jackie",
-	            "jamie", "jamie", "john", "johnny", "jamie", "johnny", "john"
+	             "jackie", "johnny", "john","johnny", "jackie",
+	            "jamie", "jamie", "john", "johnny", "jamie", "johnny", "john","john",
 	        };
 
-	        Map<String, Integer> voteMap = new HashMap<>();
-	        
-	        for (String name : votes) {
-	            voteMap.put(name, voteMap.getOrDefault(name, 0) + 1);
-	        }
-
 	       
+	        Map<String, Integer> voteCounts = new HashMap<String, Integer>();
 	        
-	        System.out.println(voteMap);
+	        System.out.println(voteCounts);
 	        
-	        System.out.println("Vote counts:");
-	        for (Map.Entry<String, Integer> entry : voteMap.entrySet()) {
-	            System.out.println(entry.getKey() + " : " + entry.getValue());
+	//  Counting the Votes
+	        
+	        for(String eachVote : votes) {
+//	        	System.out.println(eachVote + "");
+	        	
+	        	if(voteCounts.containsKey(eachVote)) {
+	        		voteCounts.put(eachVote, voteCounts.get(eachVote) + 1 );
+	        		
+	        	}
+	        	else {
+	        		voteCounts.put(eachVote, 1);
+	        	}
+	        	
 	        }
-
 	        
 	        
+	        System.out.println("voteCounts : " + voteCounts );
+	        
+	        
+// 	 Checking the Max Votes for the Person
+	        
+	        int maxCount = 0;
 	        String winner = "";
-	        int maxVotes = 0;
-
-	        for (Map.Entry<String, Integer> entry : voteMap.entrySet()) {
-	            String name = entry.getKey();
-	            int count = entry.getValue();
-
-	            if (count > maxVotes || (count == maxVotes && name.compareTo(winner) < 0)) {
-	                maxVotes = count;
-	                winner = name;
-	            }
-	        }
-
-	        System.out.println("\nWinner: " + winner + " with " + maxVotes + " votes");
+	        
+	      for(Map.Entry<String, Integer> voteSet : voteCounts.entrySet()) {
+	    	  
+//	    	  System.out.println(voteSet);
+	    	  
+	    	  if(voteSet.getValue() > maxCount) {
+	    		  maxCount = voteSet.getValue();
+	    		  winner = voteSet.getKey();
+	    	  }
+	    	  
+	    	  else if(voteSet.getValue() == maxCount){
+	    		  
+	    		  if(voteSet.getKey().length() < winner.length() ) {
+	    			  
+	    			  winner = voteSet.getKey();
+	    		  }
+	    		  
+	    	  }
+ 
+	    	  System.out.println(voteSet);
+	      }
+	      
+	      System.out.println("Winner : " + winner);
+	        
 	        
 	    }
 	
