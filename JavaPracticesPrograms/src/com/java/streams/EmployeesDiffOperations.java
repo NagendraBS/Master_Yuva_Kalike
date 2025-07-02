@@ -99,11 +99,10 @@ public class EmployeesDiffOperations {
 		Map<String, Integer> totalSalarybyDept = employees.stream().
 				collect(Collectors.groupingBy(Emp::getDepartment, Collectors.summingInt(Emp::getSalary)));
 		
-		
-		
-		return totalSalarybyDept;
+		return totalSalarybyDept ;
 		
 	}
+	
 	
 	
 
