@@ -1,12 +1,13 @@
 package com.java.Arrays;
 
+import java.util.Arrays;
+
 public class Array {
 
 	public static void main(String[] args) {
 
 		//Method 1
 		
-//		int[] arr = {9, 3 , 7 , 1, 4};
 		int arr[] = {9, 3 , 7 , 1, 4};
 
 		
@@ -33,7 +34,17 @@ public class Array {
 		for(int i = 0; i < arraySize; i++) {
 			System.out.println("Elements in array are " + i + ": " + arr1[i]);
 		}
-				
+			
+		int arr4[] = {9, 3 , 7 , 1, 4};
+		int arr5[] = {9, 3 , 7 , 1, 4};
+
+		
+		if(Arrays.equals(arr5, arr4))
+			System.out.println("Same");
+		else
+			System.out.println("Not Same");
+		
+		
 	}
 
 }

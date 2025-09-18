@@ -8,7 +8,7 @@ public class CountEachLetter {
 
 	public static void main(String[] args) {
 
-		String input = "GalaxE Solutions";
+		String input = "JavaJ2EE2";
 
 		input = input.toLowerCase();
 

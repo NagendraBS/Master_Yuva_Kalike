@@ -53,7 +53,8 @@ public class EmployeesDiffOperations {
 			    new Emp("Bob", "IT", 4000),
 			    new Emp("Charlie", "HR", 3500),
 			    new Emp("David", "IT", 4500),
-			    new Emp("Eve", "Sales", 3800)
+			    new Emp("Eve", "Sales", 3800),
+			    new Emp("Robin", "Sales", 4200)
 			    );
 		
 		
@@ -79,6 +80,7 @@ public class EmployeesDiffOperations {
 			
 			total = total + salary;
 		}
+		
 	
 		System.out.println("Total IT Department Salary : " + total);
 		
@@ -104,6 +106,4 @@ public class EmployeesDiffOperations {
 	}
 	
 	
-	
-
 }

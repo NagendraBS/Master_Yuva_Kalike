@@ -12,7 +12,7 @@ public class DuplicatesFinderUsingIntegers {
 
 	public static void main(String[] args) {
 
-		List<Integer> numbers = Arrays.asList(4, 2, 5, 2, 6, 4, 7, 8);
+		List<Integer> numbers = Arrays.asList(4, 7, 2, 5, 2, 6, 4, 7, 8);
 
 		Set<Integer> seen = new HashSet<>();
 		Set<Integer> duplicates = new HashSet<Integer>();
