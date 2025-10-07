@@ -10,14 +10,14 @@ public class Function_Demo {
 //			 To implement functions oracle people introduced Function interface in 1.8version.
 //			 Function interface present in Java.util.function package.
 //			 Functional interface contains only one method i.e., apply()
-//	
-	
+//
+
 	public static void main(String[] args) {
 
 		Function<String, Integer> f = s -> s.length();
 		System.out.println(f.apply("Nagendra"));
-				
-		
+
+
 	}
 
 }

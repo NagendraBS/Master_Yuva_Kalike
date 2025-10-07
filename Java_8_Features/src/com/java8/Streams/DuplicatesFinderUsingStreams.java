@@ -14,19 +14,19 @@ public class DuplicatesFinderUsingStreams {
 
         Set<String> seen = new HashSet<>();
         Set<String> duplicates = new HashSet<>();
-        
+
         for(String name : names) {
-        	
+
         	if(!seen.add(name)) {
         		duplicates.add(name);
         	}
-        	
+
         }
-        
+
         List<String> duplicateNames = new LinkedList<>(duplicates);
-        
+
         System.out.println("Duplicates Elements are : " + duplicateNames);
-        
+
 	}
 
 }

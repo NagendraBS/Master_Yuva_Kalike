@@ -15,7 +15,7 @@ public class UpperCase_Streams_Exmp {
 											.filter(name -> name.toLowerCase().startsWith("s"))  // Case Sensitive Checks
 											.map(String::toUpperCase)
 											.collect(Collectors.toList());
-		
+
 		System.out.println("fileteredNames : " + fileteredNames );
 
 	}
