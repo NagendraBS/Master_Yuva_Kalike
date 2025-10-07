@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					https://www.springframework.org/schema/beans/spring-beans.xsd 
+					http://www.springframework.org/schema/context 
+					http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="infobean"
+		class="com.springcore.SetterDependencyInjection.javaCollections.Map.InfoBean">
+
+		<property name="name" value="Yogendra" />
+		<property name="message"
+			value="Welcome to Happy Coding Platform" />
+		<property name="frameworks">
+			<map>
+
+				<entry key="Struts" value="Struts is an open source framework used to develop Java MVC based web applications."></entry>
+				
+				<entry key="Spring" value="Spring is an application framework used to develop Java Enterprise applications 
+                           and designed on concept called Dependency injection."></entry>
+                           
+				<entry key ="Hibernate" value="Hibernate is an object-relational mapping (ORM) framework that works with relational 
+                           databases to manage the data."></entry>
+
+			</map>
+		</property>
+
+
+	</bean>
+
+</beans>
