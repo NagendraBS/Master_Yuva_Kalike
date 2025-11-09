@@ -1,0 +1,5 @@
+{"patientId": "P001", "name": "Alice Johnson", "age": 32, "condition": "Hypertension", "lastVisitDate": "20-04-2025", "isInsured": true, "pharmacyName": "HealthFirst Pharmacy", "status": "ACTIVE"}
+{"patientId": "P002", "name": "Bob Martinez", "age": 45, "condition": "Type 2 Diabetes", "lastVisitDate": "18-03-2025", "isInsured": false, "pharmacyName": "WellCare Pharmacy", "status": "NOT ACTIVE"}
+{"patientId": "P003", "name": "Clara Lee", "age": 29, "condition": "Asthma", "lastVisitDate": "29-04-2025", "isInsured": true, "pharmacyName": "Neighborhood Pharmacy", "status": "ACTIVE"}
+{"patientId": "P004", "name": "David Kim", "age": 60, "condition": "Chronic Pain", "lastVisitDate": "27-02-2025", "isInsured": false, "pharmacyName": "MediQuick Pharmacy", "status": "NOT ACTIVE"}
+{"patientId": "P005", "name": "Eva Green", "age": 38, "condition": "High Cholesterol", "lastVisitDate": "15-01-2025", "isInsured": true, "pharmacyName": "CityMed Pharmacy", "status": "ACTIVE"}

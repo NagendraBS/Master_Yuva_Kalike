@@ -30,10 +30,13 @@ public class Address {
 	}
 	
 	
+<<<<<<< HEAD
 	
 	
 	
 	
 	
 	
+=======
+>>>>>>> c31056408ac2fd8628fca7a7112e8a19a25609d3
 }

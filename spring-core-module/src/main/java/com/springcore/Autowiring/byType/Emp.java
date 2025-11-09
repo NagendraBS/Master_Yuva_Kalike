@@ -43,6 +43,7 @@ public class Emp {
 	public String toString() {
 		return "Emp [address1=" + address1 + ", address2=" + address2 + "]";
 	}
+<<<<<<< HEAD
 	
 	
 	
@@ -50,5 +51,8 @@ public class Emp {
 	
 	
 	
+=======
+
+>>>>>>> c31056408ac2fd8628fca7a7112e8a19a25609d3
 	
 }

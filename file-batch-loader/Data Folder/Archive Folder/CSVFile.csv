@@ -1,0 +1,6 @@
+patientId,name,age,condition,lastVisitDate,isInsured,pharmacyName,status
+P001,Akash,24,Hypertension,20-04-2024,TRUE,HealthFirst Pharmacy,ACTIVE
+P002,Bharath,45,Type 2 Diabetes,18-03-2024,FALSE,WellCare Pharmacy,ACTIVE
+P003,Chaithanya,44,Asthma,29-04-2023,TRUE,Neighborhood Pharmacy,ACTIVE
+P004,Durga,39,Chronic Pain,27-02-2024,FALSE,MediQuick Pharmacy,NOT ACTIVE
+P005,Elen,58,High Cholesterol,15-01-2025,TRUE,CityMed Pharmacy,ACTIVE
