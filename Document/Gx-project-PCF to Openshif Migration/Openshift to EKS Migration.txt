@@ -1,0 +1,40 @@
+ 
+ Automation Need to be Done :
+ 
+ 
+ Step 1 : Service Now Tickets What and all We Have to Create for EKS , Piece of Code To New Repo for Tickets.
+ 
+ Steps 2 : Creating Roles for AWS Services According to the Requirement.
+ 
+ Step 3 :  Creating Secret Manager Encryption and Decryption.
+ 
+ Namespace Creation which is Already Existing :
+ 
+ Step 4 : If We Cant able to Do Existing Namespace, Why ?, Including Other Egress and other Roles.  ( Imp Question Need Confirmation on this )
+ 
+ Argo CD :
+ 
+ Step 5 : Creation of JWt token and Need to Add those JWT tokens in Jenkins Env.s Variables.
+ 
+  - > Create a new Repo and Start this AWS migration .,  What and All the Steps We Did For Openshift We Have to Use it , The Only Things We Have to Chnage is 
+ from ArgoCD, We have to Debug for AWS Migration Process.
+ 
+ 
+ 
+ -- > Will Start With Separate Code Repository (New Repository ) and Will Start Automating.
+ 
+ 
+ Need to take Support from COE team :
+ 
+ 1. Need to ask COE Team, for The Further Process as point of Contact for Further Automation Process.
+ 2. Since its all about Kubernetes.
+ 
+ 
+Start With an Exaple For Encrypting and Decrypting of the Secrets.
+
+
+Actions to Be Done :
+
+1. Need to Create new Repository and Starting With an Example Application.
+
+

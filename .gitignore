@@ -1,1 +1,31 @@
 /.metadata/
+# === Build output ===
+target/
+bin/
+out/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# === IDE / project files ===
+*.iml
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+Document/TRAININGS/**/*.tgz
+
+# Large archives
+*.tgz
+*.gz
+*.zip
+Document/TRAININGS/**

@@ -1,0 +1,85 @@
+What were your major accomplishments in the project you have completed?
+
+Migration of Services from PCF to Openshift and AWS Platforms, for all respective environments as mentioned in target. Till Now I have been deployed around 15-18 Applications Including Production Deployments with Clients. 
+
+ Analyzed and Performed Code Related Changes for Openshift Configuration as well for deployment process. By troubleshooting the Issues faced, Successfully removed the Application Errors While Doing Deployment Process by Analyzing the Various types of error issues. Accomplished the testing process for the respective applications with postman API, Apache J-meter, PAX Tool testing and Selenium Technologies. 
+
+I have received an opportunity to automate "Ingress Setup Membership" under development project during the development of Automation Tool for the Migration of PCF to EKS Platform. This helps me to explore myself for the development projects.
+
+
+
+
+
+What were your learnings from the completed project?
+
+I got an Opportunity to learn Amazon  web services (AWS), Terraform, Jenkins, CI/CD Technologies. 
+I managed for the smooth operation of a clients application, Along with deploy and manage code changes with operations staff to ensure that systems are up and running smoothly. So, I have learnt some of the new Technologies like, Git, Hermes, ArgoCD, AppExpress, Redhat Quay, Config Server, Selenium, Postman API.
+
+ I become to Know the Importance  of collaboration and integration between development and operations teams under this project. 
+Due to I received an opportunity for development of an Automation Tool, Majorly I gained knowledge regarding set of practices, tools, and principles beyond coding here.
+
+I have learnt to give self contribution to the team in different ways by Suggesting the self plan about work strategy and the implementation process to reduce the overall development time period.
+
+
+
+
+
+Skills:
+
+
+
+Under GalaxE Training: 
+
+Core JAVA
+JavaScript
+React JS
+HTMl
+CSS 
+Bootstrap
+Java SpringBoot
+MySQL
+
+
+From PCF to OS Project (Eagle Training): 
+
+AWS(Amazon web Services)
+Terraform
+CI/CD
+Jenkins
+Git
+Hermes
+ArgoCD
+Quay
+AppExpress
+Openshift Platform
+Newrelic DashBoards
+Config Server
+Postman API
+Apache Kafka
+PAX testing tool
+Apache J-meter
+Selenium 
+Selenium Automation
+
+
+
+What are the skill areas (other than AI/ML) you think you are lagging in line with the latest
+market trend? What is your plan to upgrade skills and grow in career?
+
+As I think I desire to give more Concentration on AWS Platform and Development as well. my main objective is to Build my career in development by upgrading my skills in right situation as per requirement. So I believe in Self learning by taking up the courses , seeking the advises from the manager, Discussing with Colleagues and  grabbing the opportunities at right time. 
+
+
+
+What are the activites which you are performing currently which could help to upgrade your skills and career?
+
+I believe in self learning, so proceeding to taking up the courses along with my task , seeking the guidance & advises  from the manager and Senior Colleagues, Discussing with Colleagues regarding latest technology trends to upgrade accordingly. Also looking to implement the new technology in our assignments for efficient accomplishments.
+
+
+Kindly provide a list of your current day-to-day activities.
+
+1. Making to-do lists in mind.
+2. Scheduling for Accomplishments.
+3. Organizing my workday by time.
+4. Identify the distraction to overcome.
+5. Reducing Multitasking
+6. Tea br

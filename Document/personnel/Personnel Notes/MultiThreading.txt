@@ -1,0 +1,68 @@
+Multithreading is a process of excute multiple threads at the same time,
+ without dependency of other threads.
+
+java Language is Popular one of the reason because of this Multithreading.
+
+"Thread is a pre-defined Class in Java, It is well known for 
+independent Execution."
+
+
+
+Creation Of Thread Class:
+
+1) By Extending Thread Class.
+
+ex:
+
+class Multi extends Thread{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+public static void main(String args[]){  
+Multi t1=new Multi();  
+t1.start();  
+ }  
+}  
+
+
+Output:
+
+thread is running...
+
+
+2) By Implementing runnable Interface.
+
+ex:
+
+class Multi3 implements Runnable{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+  
+public static void main(String args[]){  
+Multi3 m1=new Multi3();  
+Thread t1 =new Thread(m1);   // Using the constructor Thread(Runnable r)  
+t1.start();  
+ }  
+}  
+
+Output:
+
+thread is running...
+
+
+
+The significant differences between extending Thread class and implementing Runnable interface:
+
+1)When we extend Thread class, we can’t extend any other class even we require and
+ When we implement Runnable, we can save a space for our class to extend any other class in future or now.
+
+ 2)When we extend Thread class, each of our thread creates unique object and associate with it. 
+When we implements Runnable, it shares the same object to multiple threads.
+
+
+
+
+
+Life Cycle of thread:
+

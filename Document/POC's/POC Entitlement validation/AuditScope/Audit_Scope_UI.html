@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Parameter Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>Entitlement Validation</h1>
+    
+    <label for="filePath">Enter Excel File Path:</label>
+    <input type="file" id="upload" accept=".xlsx, .xls" />
+
+    <h2>Configuration Table</h2>
+    <table id="configTable">
+        <thead>
+            <tr>
+                <th>Scope</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Audit Scope</td>
+                <td><input type="text" id="filterColumn" value="Column1"></td>
+            </tr>
+            <tr>
+                <td>Review Layer</td>
+                <td><input type="text" id="filterValue" value="Value1"></td>
+            </tr>
+            <tr>
+                <td>IAR Frequency</td>
+                <td><input type="text" id="filterValue" value="Value1"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="process">Process Excel</button>
+
+    <h2>Result Table</h2>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>SA3/SA5/SA11</th>
+                <th>Application Layer/Platform or OS Layer /Database Layer</th>
+                <th>Semi Annual/Quarterly/Quarterly</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody">
+            <!-- Results will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('process').addEventListener('click', function() {
+            const fileInput = document.getElementById('upload');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please upload an Excel file first.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+                
+                // Convert sheet to JSON
+                const jsonData = XLSX.utils.sheet_to_json(worksheet);
+                
+                // Clear previous results
+                const resultBody = document.getElementById('resultBody');
+                resultBody.innerHTML = '';
+
+                // Get filter values
+                const filterColumn = document.getElementById('filterColumn').value;
+                const filterValue = document.getElementById('filterValue').value;
+
+                // Filter and populate result table
+                jsonData.forEach(row => {
+                    if (row[filterColumn] && row[filterColumn].toString() === filterValue) {
+                        const newRow = resultBody.insertRow();
+                        Object.values(row).forEach(cell => {
+                            const newCell = newRow.insertCell();
+                            newCell.textContent = cell;
+                        });
+                    }
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
+</body>
+</html>
