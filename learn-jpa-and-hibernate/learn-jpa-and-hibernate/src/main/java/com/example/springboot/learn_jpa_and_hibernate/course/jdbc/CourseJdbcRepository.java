@@ -15,17 +15,45 @@ public class CourseJdbcRepository {
 	
 	private static String INSERT_QUERY = 
 			
-			"""   
-			insert into course (id, name, author)
-			values(?, ?, ?);
-			
-			""" ;
+			"""
+
+		    INSERT INTO course (id, name, author)
+		    VALUES (?,?,?);
+		    """;
 		
+	private static String DELETE_QUERY = 
+			
+			"""
+			delete from course  
+			where id = ?
+			""" ;
 	
+	private static String SELECT_QUERY = 
+			
+			"""
+			select * from course
+			where id = ?
+			""";
+	
+
+
 	public void insert(Course course) {
-		springJdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
+		springJdbcTemplate.update(INSERT_QUERY,course.getId(),
+	            course.getName(),
+	            course.getAuthor());
 		
 	}
+	
+	
+	public void deleteById(int id) {
+		
+		springJdbcTemplate.update(DELETE_QUERY, id);
+	}
+	
+	
+//	public Course findById(long id) {
+//		springJdbcTemplate.queryForObject(SELECT_QUERY, null, id); 
+//	}
 	
 }
  	
