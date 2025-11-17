@@ -2,12 +2,16 @@ package com.yuvalearning.springboot.controller;
 
 import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
+import com.yuvalearning.springboot.exception.ErrorDetails;
+import com.yuvalearning.springboot.exception.ResourceNotFoundException;
 import com.yuvalearning.springboot.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -66,7 +70,25 @@ public class UserController {
         return new ResponseEntity<>("User Sucessfully Deleted !" , HttpStatus.OK);
     }
 
+// Handling Specific Exception  Wrt  Controller Class
+
+    // Commenting  Below Code, Since It has been moved to Global Exception Handling.
 
 
+//    @ExceptionHandler(ResourceNotFoundException.class)
+//    public ResponseEntity<ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception,
+//                                                                        WebRequest webRequest)
+//    {
+//
+//        ErrorDetails errorDetails = new ErrorDetails(
+//                LocalDateTime.now(),
+//                exception.getMessage(),
+//                webRequest.getDescription(false),
+//                "USER_NOT_FOUND"
+//
+//        );
+//
+//        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+//    }
 
 }
