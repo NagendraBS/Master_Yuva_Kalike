@@ -1,5 +1,6 @@
 package com.yuvalearning.springboot.service.impl;
 
+import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
 import com.yuvalearning.springboot.repository.UserRepository;
 import com.yuvalearning.springboot.service.UserService;
@@ -15,9 +16,38 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
+    // DTO -  Refactoring the createUser Method in the serviceImpl
+
     @Override
-    public User createUser(User user) {
-        return userRepository.save(user);
+    public UserDto createUser(UserDto userDto) {
+        //above line Converted from User --> UserDto
+        // Now , we Need to Store the [JPA entity Object] to the database.
+        // So, Convert the UserDto Object --> User JPA entity Object -->
+        // Pass,  User JPA entity Object  -->  createUser() Method
+
+        // Convert the UserDto Object --> User JPA entity Object
+        User user = new User(
+                userDto.getId(),
+                userDto.getFirstName(),
+                userDto.getLastName(),
+                userDto.getEmail()
+        );
+
+        //pass the Converted [UserJpa Object] to the save() method here
+       User savedUser =  userRepository.save(user);  // Main Saving logic
+
+       // Convert the [UserJpa Entity] to [UserDto Object]
+        UserDto savedUserDto = new UserDto(
+                savedUser.getId(),
+                savedUser.getFirstName(),
+                savedUser.getLastName(),
+                savedUser.getEmail() 
+        );
+
+
+        // Need to return [UserDto Object]
+         return savedUserDto;     // Returning Logic in UserDto Object
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.yuvalearning.springboot.controller;
 
+import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
 import com.yuvalearning.springboot.service.UserService;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+
+// DTO - 2. Refactor the createUser REST API to use DTO  (ResponseEntity<User> --> ResponseEntity<UserDto>)
 
 @RestController
 @AllArgsConstructor
@@ -19,8 +23,8 @@ public class UserController {
     //Build Create User REST API
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user){   // @RequestBody - > Converts JSON into java Object
-       User savedUser =  userService.createUser(user);
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user){   // @RequestBody - > Converts JSON into java Object
+       UserDto savedUser =  userService.createUser(user);
        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
