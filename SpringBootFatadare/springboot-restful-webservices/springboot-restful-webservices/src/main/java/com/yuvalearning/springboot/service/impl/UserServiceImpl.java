@@ -6,6 +6,7 @@ import com.yuvalearning.springboot.mapper.UserMapper;
 import com.yuvalearning.springboot.repository.UserRepository;
 import com.yuvalearning.springboot.service.UserService;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
+    private ModelMapper modelMapper;
+
     // DTO -  Refactoring the createUser Method in the serviceImpl
 
     @Override
@@ -28,7 +31,9 @@ public class UserServiceImpl implements UserService {
         // Pass,  User JPA entity Object  -->  createUser() Method
 
         // Convert the UserDto Object --> User JPA entity Object
-            User user = UserMapper.mapToUser(userDto);
+//            User user = UserMapper.mapToUser(userDto);
+
+        User user = modelMapper.map(userDto, User.class);
 
 //        User user = new User(
 //                userDto.getId(),
@@ -42,7 +47,9 @@ public class UserServiceImpl implements UserService {
        User savedUser =  userRepository.save(user);  // Main Saving logic
 
        // Convert the [UserJpa Entity] to [UserDto Object]
-        UserDto savedUserDto = UserMapper.mapTouserDto(savedUser);
+//        UserDto savedUserDto = UserMapper.mapTouserDto(savedUser);
+
+        UserDto savedUserDto = modelMapper.map(savedUser, UserDto.class);
 
 
 //        UserDto savedUserDto = new UserDto(
@@ -62,13 +69,19 @@ public class UserServiceImpl implements UserService {
     public UserDto getUserById(Long userId) {
         Optional<User> optionalUser =  userRepository.findById(userId);
         User user = optionalUser.get();
-        return UserMapper.mapTouserDto(user);
+//        return UserMapper.mapTouserDto(user);
+        return modelMapper.map(user, UserDto.class);
+
     }
+
 
     @Override
     public List<UserDto> getAllUsers() {
        List<User> users = userRepository.findAll();
-        return  users.stream().map(user -> UserMapper.mapTouserDto(user))
+//        return  users.stream().map(user -> UserMapper.mapTouserDto(user))
+//                .collect(Collectors.toList());
+
+        return  users.stream().map(user -> modelMapper.map(user, UserDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -83,7 +96,9 @@ public class UserServiceImpl implements UserService {
         //After Updating The Parameters we are saving the updated existing user to the Database table (using UserRepository)
         User updatedUser = userRepository.save(existingUser);
 
-        return UserMapper.mapTouserDto(updatedUser);
+//        return UserMapper.mapTouserDto(updatedUser);
+
+            return modelMapper.map(updatedUser, UserDto.class);
     }
 
     @Override
