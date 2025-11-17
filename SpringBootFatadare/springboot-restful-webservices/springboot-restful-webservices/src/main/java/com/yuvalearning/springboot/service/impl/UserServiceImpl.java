@@ -2,6 +2,7 @@ package com.yuvalearning.springboot.service.impl;
 
 import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
+import com.yuvalearning.springboot.mapper.UserMapper;
 import com.yuvalearning.springboot.repository.UserRepository;
 import com.yuvalearning.springboot.service.UserService;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -26,23 +28,29 @@ public class UserServiceImpl implements UserService {
         // Pass,  User JPA entity Object  -->  createUser() Method
 
         // Convert the UserDto Object --> User JPA entity Object
-        User user = new User(
-                userDto.getId(),
-                userDto.getFirstName(),
-                userDto.getLastName(),
-                userDto.getEmail()
-        );
+            User user = UserMapper.mapToUser(userDto);
+
+//        User user = new User(
+//                userDto.getId(),
+//                userDto.getFirstName(),
+//                userDto.getLastName(),
+//                userDto.getEmail()
+//        );
+
 
         //pass the Converted [UserJpa Object] to the save() method here
        User savedUser =  userRepository.save(user);  // Main Saving logic
 
        // Convert the [UserJpa Entity] to [UserDto Object]
-        UserDto savedUserDto = new UserDto(
-                savedUser.getId(),
-                savedUser.getFirstName(),
-                savedUser.getLastName(),
-                savedUser.getEmail() 
-        );
+        UserDto savedUserDto = UserMapper.mapTouserDto(savedUser);
+
+
+//        UserDto savedUserDto = new UserDto(
+//                savedUser.getId(),
+//                savedUser.getFirstName(),
+//                savedUser.getLastName(),
+//                savedUser.getEmail()
+//        );
 
 
         // Need to return [UserDto Object]
@@ -51,18 +59,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(Long userId) {
+    public UserDto getUserById(Long userId) {
         Optional<User> optionalUser =  userRepository.findById(userId);
-        return optionalUser.get();
+        User user = optionalUser.get();
+        return UserMapper.mapTouserDto(user);
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDto> getAllUsers() {
+       List<User> users = userRepository.findAll();
+        return  users.stream().map(user -> UserMapper.mapTouserDto(user))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public User updateUser(User user) {
+    public UserDto updateUser(UserDto user) {
         // For Updating The user we are getting the user by Id from the Database table (userRepository)
       User existingUser = userRepository.findById(user.getId()).get();
         existingUser.setFirstName(user.getFirstName());
@@ -71,7 +82,8 @@ public class UserServiceImpl implements UserService {
 
         //After Updating The Parameters we are saving the updated existing user to the Database table (using UserRepository)
         User updatedUser = userRepository.save(existingUser);
-        return updatedUser;
+
+        return UserMapper.mapTouserDto(updatedUser);
     }
 
     @Override
