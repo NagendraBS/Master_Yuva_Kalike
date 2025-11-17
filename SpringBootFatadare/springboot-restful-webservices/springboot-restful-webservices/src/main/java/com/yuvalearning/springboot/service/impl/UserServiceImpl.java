@@ -2,6 +2,7 @@ package com.yuvalearning.springboot.service.impl;
 
 import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
+import com.yuvalearning.springboot.exception.ResourceNotFoundException;
 import com.yuvalearning.springboot.mapper.UserMapper;
 import com.yuvalearning.springboot.repository.UserRepository;
 import com.yuvalearning.springboot.service.UserService;
@@ -9,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -67,8 +69,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getUserById(Long userId) {
-        Optional<User> optionalUser =  userRepository.findById(userId);
-        User user = optionalUser.get();
+        User user =  userRepository.findById(userId).orElseThrow(
+                () -> new ResourceNotFoundException("User", "Id" , userId)
+
+        );
+//        User user = optionalUser.get();
 //        return UserMapper.mapTouserDto(user);
         return modelMapper.map(user, UserDto.class);
 
@@ -88,7 +93,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto updateUser(UserDto user) {
         // For Updating The user we are getting the user by Id from the Database table (userRepository)
-      User existingUser = userRepository.findById(user.getId()).get();
+      User existingUser = userRepository.findById(user.getId()).orElseThrow(
+              () -> new ResourceNotFoundException("User", "Id", user.getId())
+      );
         existingUser.setFirstName(user.getFirstName());
         existingUser.setLastName(user.getLastName());
         existingUser.setEmail(user.getEmail());
@@ -103,6 +110,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long userId) {
+        User existingUser = userRepository.findById(userId).orElseThrow(
+                () -> new ResourceNotFoundException("User", "Id", userId)
+        );
+
        userRepository.deleteById(userId);
     }
 
