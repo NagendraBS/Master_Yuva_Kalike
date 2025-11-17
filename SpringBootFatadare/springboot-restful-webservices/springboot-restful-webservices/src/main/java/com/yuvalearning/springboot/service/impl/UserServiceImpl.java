@@ -2,6 +2,7 @@ package com.yuvalearning.springboot.service.impl;
 
 import com.yuvalearning.springboot.dto.UserDto;
 import com.yuvalearning.springboot.entity.User;
+import com.yuvalearning.springboot.exception.EmailAlreadyExistException;
 import com.yuvalearning.springboot.exception.ResourceNotFoundException;
 import com.yuvalearning.springboot.mapper.UserMapper;
 import com.yuvalearning.springboot.repository.UserRepository;
@@ -31,6 +32,15 @@ public class UserServiceImpl implements UserService {
         // Now , we Need to Store the [JPA entity Object] to the database.
         // So, Convert the UserDto Object --> User JPA entity Object -->
         // Pass,  User JPA entity Object  -->  createUser() Method
+
+  // EmailAlreadyExistsException
+        Optional<User> optionalUser = userRepository.findByEmail(userDto.getEmail());
+
+        if(optionalUser.isPresent()){
+            throw new EmailAlreadyExistException("Email Already Exists for User");
+        }
+
+
 
         // Convert the UserDto Object --> User JPA entity Object
 //            User user = UserMapper.mapToUser(userDto);
