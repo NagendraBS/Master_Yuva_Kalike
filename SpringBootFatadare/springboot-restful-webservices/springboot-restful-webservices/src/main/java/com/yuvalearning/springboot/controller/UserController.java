@@ -5,6 +5,7 @@ import com.yuvalearning.springboot.entity.User;
 import com.yuvalearning.springboot.exception.ErrorDetails;
 import com.yuvalearning.springboot.exception.ResourceNotFoundException;
 import com.yuvalearning.springboot.service.UserService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class UserController {
     //Build Create User REST API
 
     @PostMapping
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user){   // @RequestBody - > Converts JSON into java Object
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto user){   // @RequestBody - > Converts JSON into java Object
        UserDto savedUser =  userService.createUser(user);
        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
@@ -56,7 +57,7 @@ public class UserController {
 
     @PutMapping("{id}")
     public ResponseEntity<UserDto> updateUser( @PathVariable("id") Long userId ,
-                                            @RequestBody UserDto user){
+                                          @Valid  @RequestBody UserDto user){
         user.setId(userId);
        UserDto updatedUser = userService.updateUser(user);
        return new ResponseEntity<>(updatedUser, HttpStatus.OK);

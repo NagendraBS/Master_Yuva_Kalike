@@ -1,16 +1,26 @@
 package com.yuvalearning.springboot.exception;
 
+import org.jspecify.annotations.Nullable;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
 
     //ResourceNotFoundException
 
@@ -50,7 +60,7 @@ public class GlobalExceptionHandler {
     }
 
 
-    // Global Exception Handling for All Other Exceptions 
+    // Global Exception Handling for All Other Exceptions
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> handleGlobalException(Exception exception,
@@ -67,6 +77,32 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
+    // Customize the Validation Error Response
+
+    @Override
+    protected @Nullable ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+                                                                            HttpHeaders headers,
+                                                                            HttpStatusCode status,
+                                                                            WebRequest request) {
+        //Storing Multiple Error Messages
+        Map<String , String> errors = new HashMap<>();
+
+        List<ObjectError> errorList =   ex.getBindingResult().getAllErrors();
+
+        // For Retrieving the Each Error Message From the errorList using the " forEach "
+        errorList.forEach((error) -> {
+            String fieldName = ( (FieldError) error).getField();
+            String message  = error.getDefaultMessage();
+
+            //adding these two values to the errors map
+            errors.put(fieldName, message);
+        } );
+
+        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+    }
+
 
 
 }
