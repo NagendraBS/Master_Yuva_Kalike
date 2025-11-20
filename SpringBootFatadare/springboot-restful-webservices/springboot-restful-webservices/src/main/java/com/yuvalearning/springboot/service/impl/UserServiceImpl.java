@@ -17,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+@AllArgsConstructor  // Using Constructor Based Dependency Injection  UserRepository, ModelMapper
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
