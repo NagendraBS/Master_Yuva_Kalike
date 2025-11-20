@@ -1,11 +1,15 @@
 package com.yuvalearning.employee_service.service.impl;
 
+import com.yuvalearning.employee_service.dto.APIResponseDto;
+import com.yuvalearning.employee_service.dto.DepartmentDto;
 import com.yuvalearning.employee_service.dto.EmployeeDto;
 import com.yuvalearning.employee_service.entity.Employee;
 import com.yuvalearning.employee_service.repository.EmployeeRepository;
 import com.yuvalearning.employee_service.service.EmployeeService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
@@ -14,6 +18,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
 
+    // Synchronous Comminication Between the Microservices
+    // 4. Inject and Use REST Template to make REST API call in EmployeeServiceImpl Class.
+
+    private RestTemplate restTemplate;
+
     @Override
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
 
@@ -21,7 +30,9 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employeeDto.getId(),
                 employeeDto.getFirstName(),
                 employeeDto.getLastName(),
-                employeeDto.getEmail()
+                employeeDto.getEmail(),
+
+                employeeDto.getDepartmentCode()
         );
 
        Employee savedEmployee =  employeeRepository.save(employee);
@@ -30,7 +41,9 @@ public class EmployeeServiceImpl implements EmployeeService {
                 savedEmployee.getId(),
                 savedEmployee.getFirstName(),
                 savedEmployee.getLastName(),
-                savedEmployee.getEmail()
+                savedEmployee.getEmail(),
+
+                savedEmployee.getDepartmentCode()
         );
 
         return savedEmployeeDto;
@@ -38,18 +51,41 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public EmployeeDto getEmployeeById(Long employeeId) {
+    public APIResponseDto getEmployeeById(Long employeeId) {
 
         Employee employee = employeeRepository.findById(employeeId).get();
 //        System.out.println("----------------------------------- : " + employee);
+
+        // Synchronous Comminication Between the Microservices
+        // Using the "RESTTemplate Bean " we Can make REST API Calls.
+
+       ResponseEntity<DepartmentDto> responseEntity =  restTemplate.getForEntity("http://localhost:8080/api/departments/" + employee.getDepartmentCode(),
+                DepartmentDto.class);
+
+       DepartmentDto departmentDto = responseEntity.getBody();
 
         EmployeeDto employeeDto = new EmployeeDto(
                 employee.getId(),
                 employee.getFirstName(),
                 employee.getLastName(),
-                employee.getEmail()
+                employee.getEmail(),
+
+                employee.getDepartmentCode()
         );
 
-        return employeeDto;
+        // Synchronous Comminication Between the Microservices
+        // Here We Need ot Send Back the "departmentDto" Back to the Client   with "EmployeeDto"
+        // So, We Need to Create one More Dto Class Called "APIResponseDto".
+
+        // Create the Instance Of APIResponseDTO,
+        // Lets, Set the DepartmentDto and EmployeeDto to APIResponseDTO
+
+        APIResponseDto apiResponseDto = new APIResponseDto();
+        apiResponseDto.setEmployeeDto(employeeDto);
+        apiResponseDto.setDepartmentDto(departmentDto);
+
+        // So now We have return the APIResponseDto Instance
+
+        return apiResponseDto;
     }
 }

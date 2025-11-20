@@ -1,6 +1,7 @@
 package com.yuvalearning.employee_service.controller;
 
 
+import com.yuvalearning.employee_service.dto.APIResponseDto;
 import com.yuvalearning.employee_service.dto.EmployeeDto;
 import com.yuvalearning.employee_service.service.EmployeeService;
 import lombok.AllArgsConstructor;
@@ -28,11 +29,23 @@ public class EmployeeController {
 
 
     // Build Get Employee   REST API
-    @GetMapping("{id}")
-    public ResponseEntity<EmployeeDto> getEmployeeByID(@PathVariable ("id")  @RequestBody Long employeeId){
-       EmployeeDto employeeDto =  employeeService.getEmployeeById(employeeId);
-        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
-    }
 
+
+//    @GetMapping("{id}")
+//    public ResponseEntity<EmployeeDto> getEmployeeByID(@PathVariable ("id")  @RequestBody Long employeeId){
+//       EmployeeDto employeeDto =  employeeService.getEmployeeById(employeeId);
+//        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+//    }
+
+
+    // Build Get Employee   REST API
+    // Synchronous Comminication Between the Microservices
+    // Changing the employeeDto type  to APIResponseDto Type
+
+    @GetMapping("{id}")
+    public ResponseEntity<APIResponseDto> getEmployeeByID(@PathVariable("id")  @RequestBody Long employeeId){
+        APIResponseDto apiResponseDto =  employeeService.getEmployeeById(employeeId);
+        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
+    }
 
 }

@@ -16,4 +16,10 @@ public class EmployeeDto {
     private String lastName;
     private String email;
 
+
+    // Synchronous Comminication Between the Microservices
+    // 1. Add , departmentCode Field in the Employee JPA Entity
+
+    private  String departmentCode;
+
 }
