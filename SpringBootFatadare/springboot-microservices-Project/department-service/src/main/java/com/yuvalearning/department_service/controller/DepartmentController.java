@@ -29,7 +29,7 @@ public class DepartmentController {
 
     //Build Get Department REST API By DepartmentCode
     @GetMapping("{department-code}")
-    public ResponseEntity<DepartmentDto > getDepartmentByCode (@PathVariable ("department-code") String departmentCode){
+    public ResponseEntity<DepartmentDto> getDepartmentByCode (@PathVariable ("department-code") String departmentCode){
 
         DepartmentDto deapartmentById = departmentService.getDepartmentByCode(departmentCode);
         return  new ResponseEntity<>(deapartmentById, HttpStatus.OK);

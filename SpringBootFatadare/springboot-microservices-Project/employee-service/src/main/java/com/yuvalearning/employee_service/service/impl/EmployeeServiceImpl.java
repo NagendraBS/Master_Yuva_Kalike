@@ -5,6 +5,7 @@ import com.yuvalearning.employee_service.dto.DepartmentDto;
 import com.yuvalearning.employee_service.dto.EmployeeDto;
 import com.yuvalearning.employee_service.entity.Employee;
 import com.yuvalearning.employee_service.repository.EmployeeRepository;
+import com.yuvalearning.employee_service.service.APIClient;
 import com.yuvalearning.employee_service.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +24,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     // 4. Inject and Use REST Template to make REST API call in EmployeeServiceImpl Class.
 
 //    private RestTemplate restTemplate;
+
     // Inject and Use WebClient Template to make REST API call in EmployeeServiceImpl Class.
-    private WebClient webClient;
+//    private WebClient webClient;
+
+    //Injecting The API Client - Open Feign
+    private APIClient apiClient;
 
     @Override
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
@@ -68,10 +73,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 //       DepartmentDto departmentDto = responseEntity.getBody();
 
         // Using the "WebClient Bean" we Can make REST API Calls.
-        DepartmentDto departmentDto = webClient.get().uri("http://localhost:8080/api/departments/"+employee.getDepartmentCode())
-                .retrieve()
-                .bodyToMono(DepartmentDto.class)
-                .block();
+//        DepartmentDto departmentDto = webClient.get().uri("http://localhost:8080/api/departments/"+employee.getDepartmentCode())
+//                .retrieve()
+//                .bodyToMono(DepartmentDto.class)
+//                .block();
+
+        // Using the "APIClient "  (Feign Client) _we Can make REST API Calls.
+        DepartmentDto departmentDto = apiClient.getDepartmentByCode(employee.getDepartmentCode());
+
 
         EmployeeDto employeeDto = new EmployeeDto(
                 employee.getId(),
