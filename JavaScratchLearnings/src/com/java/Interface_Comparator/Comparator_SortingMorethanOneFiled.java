@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.java.Interface_List.Array_List;
 
 //Define the Student class
 class Students 
@@ -47,10 +46,7 @@ class CustomerSortingComparator
      int NameCompare = customer1.getName().compareTo(
        						customer2.getName());
      
-<<<<<<< HEAD
-=======
-     
->>>>>>> c31056408ac2fd8628fca7a7112e8a19a25609d3
+
      // If names are the same, compare by age
      int AgeCompare = customer1.getAge().compareTo(
        						customer2.getAge());
