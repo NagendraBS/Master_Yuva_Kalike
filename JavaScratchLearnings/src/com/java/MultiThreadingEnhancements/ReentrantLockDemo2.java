@@ -23,7 +23,7 @@ public class ReentrantLockDemo2 {
 
 }
 
-// Implementing the lock Instead of using the "synchronized" keyword
+// Implementing the "lock" Instead of using the synchronized keyword
 
 class Display {
 

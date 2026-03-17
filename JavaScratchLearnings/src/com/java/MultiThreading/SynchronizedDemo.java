@@ -33,6 +33,7 @@ class MyThread7 extends Thread {
 	
 	}
 	
+	@Override
 	public void run() {
 		
 		d.wish(name);
