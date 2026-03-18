@@ -2,7 +2,7 @@ package com.java.MultiThreadingEnhancements;
 
 import java.util.concurrent.locks.*;
 
-public class ReentrantLockDemo3  {
+public class ReentrantLockDemo3 {
 
 	public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class ReentrantLockDemo3  {
 
 class MyThread1 extends Thread {
 
-	ReentrantLock l = new ReentrantLock();
+static	ReentrantLock l = new ReentrantLock();
 
 	public MyThread1(String name) {
 
@@ -27,8 +27,7 @@ class MyThread1 extends Thread {
 
 	public void run() {
 
-		if (l.tryLock()) {
-			
+		if(l.tryLock()) {
 
 			System.out.println(Thread.currentThread().getName() + "....Got Lock and performing safe operations");
 
@@ -40,8 +39,8 @@ class MyThread1 extends Thread {
 
 			l.unlock();
 
-		} else {
-			System.out.println(Thread.currentThread().getName()
+			} else {
+					System.out.println(Thread.currentThread().getName()
 					+ ".... Unable to get Lock and hence performing alternative operations");
 		}
 	}
