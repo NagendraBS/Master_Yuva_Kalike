@@ -1,0 +1,91 @@
+.group-container {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px 0px -5px;
+    padding:0px 6px 0px 5px;
+    background-color: white;
+    border-radius: 0px;
+    justify-content: space-evenly;
+  }
+  .user-container {
+    display: flex;
+    align-items: center;
+    margin: 0px 50px 0px 34px;
+    padding:0px 6px 0px 6px;
+    background-color: white;
+    border-radius: 0px;
+    justify-content: space-evenly;
+  }
+  .group-info {
+    align-items: center;
+    display: block;
+    width:6.5rem;
+    /* background-color: pink; */
+    margin-left: -13px;
+  }
+  .user-info {
+    align-items: center;
+    display: block;
+    width:6.3rem;
+    /* background-color: pink; */
+    margin-left: -13px;
+  }
+  .group-title {
+    font-size: 1.2rem;
+    margin-left: 1.3rem;
+  }
+  
+  .group-icon img {
+   width: 25px;
+   align-content: center;
+   margin-left: 30px;
+  }
+  
+  .group-count {
+    font-size: 1.7rem;
+    margin-top: 0px;
+    /* background-color: antiquewhite; */
+  }
+  .group-active{
+    font-size: 0.8rem !important;
+    font-weight: 600;
+    width: 100px;
+    margin-left: 1rem;
+    margin-top: -7px;
+    color: #07bc0c;
+  }
+  .group-logo img {
+    width: 40px;
+    /* background-color: aqua; */
+    margin: -10px 0px 00px -5px;
+  }
+  .user-logo img {
+    width: 40px;
+    /* background-color: aqua; */
+    margin: -10px 0px 00px -14px;
+  }
+  .custom-autocomplete .MuiInputBase-fullWidth{
+    margin-top:1.2px;
+    height: 2.3rem !important;
+    border-radius:0px ;
+    background-color: white;
+    border: none !important;
+    
+  }
+  
+  .custom-input .MuiInputLabel-outlined  {
+    height: 100%;
+    /* background-color: #07bc0c; */
+    margin-top: -7px;
+  }
+  .custom-inputs .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input {
+    padding: 9.5px 4px;
+    margin-top: -10px !important;
+}
+  .custom-input:focus{
+    outline: none !important;
+  }
+  .custom-autocomplete .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child {
+    padding-left: 6px;
+    margin-top: -15px;
+  }

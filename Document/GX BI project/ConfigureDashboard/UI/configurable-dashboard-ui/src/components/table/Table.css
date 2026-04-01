@@ -1,0 +1,19 @@
+.example-header {
+    position: relative;
+    width: 20%;
+    left: 0px;
+    bottom: 27px;
+    color: #000;
+}
+.ag-paging-panel {
+    height: 38px !important;
+}
+.ag-theme-alpine {
+    --ag-header-foreground-color: var(--colorforwhite);
+    --ag-header-background-color: var(--dashboardBgColor);
+    font-family: var(--fontfamily);
+}
+.ag-header-icon {
+    color: var(--colorforwhite);
+    font-family: var(--fontfamily);
+}

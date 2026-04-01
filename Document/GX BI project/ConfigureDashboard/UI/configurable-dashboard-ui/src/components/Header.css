@@ -1,0 +1,131 @@
+#headerItems {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: var(--dashboardBgColor);
+  height: 35px;
+  min-height: 35px;
+}
+#headerItems .header-item {
+  color: white;
+}
+
+#headerItems .header-item-selected {
+  color: #b2bec9;
+  border-bottom: 4px solid #b2bec9;
+  border-radius: 0;
+}
+
+#headerItems .header-item:hover {
+  color: #b2bec9;
+}
+
+.admin-headers {
+  color: #000;
+}
+.admin-headers:hover {
+  color: var(--hoverStateColor) !important;
+  background-color: transparent !important;
+}
+.admin-headers:focus {
+  color: #b2bec9 !important;
+}
+.admin-headers-active {
+  color: #f9f5fa !important;
+  background-color: #383a3b;
+}
+.searchBox {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid;
+}
+.dashboardDiv {
+  height: auto;
+  max-height: 180px;
+  overflow: scroll;
+}
+.blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  background: transparent;
+  z-index: 10;
+}
+.dashMenuCard {
+  background-color: #fff;
+  color: #1f1e1e;
+  position: absolute;
+  width: fit-content;
+  top: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 11;
+}
+
+.noData {
+  width: 100%;
+  text-align: center;
+  margin: unset;
+}
+.adminMenuCard {
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  left: 120px;
+  width: fit-content;
+  top: 50px;
+  z-index: 11;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hrBar {
+  display: flex;
+  flex-direction: row;
+}
+.MuiDialog-paper {
+  border-radius: 0px !important;
+}
+.MuiDrawer-paperAnchorRight {
+  right: 0;
+}
+.MuiBackdrop-root {
+  background-color: transparent !important;
+}
+
+.logo {
+  width: 100%;
+  filter: brightness(4);
+}
+.headerDivOne {
+  display: flex;
+  align-items: center;
+}
+.logoDiv {
+  width: 100px;
+}
+.headingBtn {
+  background-color: var(--dashboardBgColor);
+  color: var(--colorforwhite);
+  font-size: 16px;
+  height: 50px;
+}
+.saveBtn {
+  background-color: var(--dashboardBgColor) !important;
+  color: var(--colorforwhite) !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+}
+.saveBtnDisabled {
+  height: 36.5px;
+  width: 64px;
+  border-radius: 0%;
+  border: none;
+  color: var(--colorforwhite) !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+}
+.popup-place {
+  top: 5% !important;
+  left: 0% !important;
+}

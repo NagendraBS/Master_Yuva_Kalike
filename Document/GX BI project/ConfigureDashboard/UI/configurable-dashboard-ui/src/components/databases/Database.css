@@ -1,0 +1,309 @@
+.div-1 {
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 0%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#Text-1 {
+  color: dodgerblue;
+  font-size: smaller;
+  height: 20px;
+}
+.text-title-1 {
+  font-size: 20px;
+}
+.test-123 {
+  width: 50%;
+  margin-top: -10px !important;
+  margin-bottom: 10px !important;
+}
+.test-124 {
+  margin-bottom: 20px !important;
+}
+.Text-2 {
+  width: 32%;
+  margin-top: 10px !important;
+  display: "flex";
+  align-items: "center";
+  justify-content: "space-between";
+  margin-right: 10px;
+}
+.Text-21 {
+  width: 100%;
+  margin-top: 20px !important;
+}
+.Text-22 {
+  width: 100%;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+.sslMode-div {
+  width: 100%;
+  margin-bottom: 20px !important;
+}
+.main-layout {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+.btn-div {
+  display: flex;
+  justify-content: end;
+  gap: 22px;
+}
+#button-1 {
+  background-color: var(--dashboardBgColor);
+  font-size: 12px;
+  color: #fff;
+  margin-right: 2%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#button-7 {
+  background-color: var(--dashboardBgColor);
+  font-size: 12px;
+  color: #fff;
+  margin-right: 2%;
+  margin-left: 82%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.Box-2 {
+  width: 700px;
+  height: 40px;
+  background-color: yellow;
+}
+#sub-box-1 {
+  width: 300px;
+}
+#sub-box-2 {
+  width: 300px;
+}
+#sub-box-3 {
+  width: 300px;
+}
+.input-1 {
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  height: 25px;
+  border-color: white;
+  background-color: white;
+}
+.Text-3 {
+  margin-top: 20px !important;
+  width: 100%;
+}
+#button-5 {
+  margin-right: 25px;
+}
+#img-3 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding-left: 120px;
+}
+#main-div-box {
+  width: 100%;
+  height: 250px;
+}
+#pic-1 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+#pic-2 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+#pic-3 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+#pic-4 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+#pic-5 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+.toggle-btn {
+  display: flex;
+  margin-top: 20px !important;
+}
+.toggle-switch {
+  padding-left: 35%;
+}
+#pic-6 {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+}
+#label-dashboard {
+  background-color: lightgray;
+}
+.form-input {
+  display: inline-table;
+}
+
+#pic-a {
+  background-color: aqua;
+  color: aqua;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+#main-dialog {
+  width: 95%;
+  height: fit-content;
+}
+#Database-1 {
+  width: 25%;
+  height: 400px;
+  display: flex;
+  float: left;
+  align-items: flex-start;
+  padding: 0%;
+}
+.card {
+  padding: 0%;
+}
+#Database-2 {
+  width: 100%;
+  height: 350px;
+  padding: 0%;
+  display: flex;
+  float: right;
+}
+#image-div {
+  height: 25px;
+  width: 25px;
+}
+#img-div {
+  width: 6%;
+  float: left;
+  margin: 0;
+}
+#text-div {
+  width: 90%;
+  padding-left: 0%;
+  padding-top: 4px;
+  float: right;
+  margin: 0;
+}
+#title-1 {
+  width: 100%;
+  height: 12%;
+  background-color: lightgrey;
+  font-style: oblique;
+  font-size: 25px;
+}
+#title-2 {
+  width: 100%;
+  background-color: lightgrey;
+  font-style: oblique;
+  font-size: 25px;
+  height: 50px;
+}
+.card-items {
+  padding: 30px;
+  display: flex;
+}
+#button-8 {
+  background-color: var(--dashboardBgColor);
+  color: var(--colorforwhite);
+  font-size: 12px;
+  float: right;
+  margin-top: 30px;
+}
+#button-9 {
+  margin-left: 93%;
+}
+#div-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#sslMode {
+  width: 100%;
+}
+#text-title {
+  font-size: 25px;
+}
+#img-mongo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding: 20px;
+}
+#top-div {
+  display: flex;
+  flex-direction: row;
+}
+.dataimage {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.data-div {
+  display: flex;
+}
+.test-1 {
+  margin-top: 20px;
+}
+#test-2 {
+  margin-top: 30px;
+}
+.test-3 {
+  margin-top: 20px;
+}
+.test-4 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.test-43 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.test-6 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px !important;
+}
+.text-data {
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+table th span {
+  color: var(--colorforwhite) !important;
+}
+
+table th span svg {
+  color: var(--colorforwhite) !important;
+}
+
+table thead tr {
+  height: 52px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  text-transform: capitalize;
+}

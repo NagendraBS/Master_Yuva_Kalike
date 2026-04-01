@@ -1,0 +1,34 @@
+.DayPickerInput-Overlay { z-index: 99; }
+.DateRangePicker_picker{
+    z-index: 1375 !important;
+    position: fixed;
+}
+#start-date-id, #end-date-id{
+    border-bottom: 1px solid;
+    font-weight: 100;
+    line-height: 7px;
+}
+#date-range-label{
+    margin-top: -10px;
+    font-weight: 100;
+    font-size: 13px;
+}
+.DateRangePicker {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  .DayPicker_transitionContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin-top: -48px;
+}
+.timePicker{
+    margin-left: -25%;
+    margin-right: 50%;
+}
+.datePicker{
+    margin-left: -25%;
+    margin-right: 50%;
+}

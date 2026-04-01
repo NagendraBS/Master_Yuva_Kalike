@@ -1,0 +1,8 @@
+ .ag-tooltip {
+    color:var(--color);
+    background-color:white;
+    top: -110%; 
+    transform: translate(0, -110%);
+    font-family: var(--fontfamily) !important;
+    font-size: var(--fontsize) !important;
+ }

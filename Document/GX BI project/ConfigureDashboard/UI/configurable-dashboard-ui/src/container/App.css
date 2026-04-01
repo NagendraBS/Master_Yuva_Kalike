@@ -1,0 +1,226 @@
+body {
+  background: #f9f5fa !important;
+  touch-action: none;
+  overflow: hidden;
+  height: 100vh;
+}
+:root {
+  --dashboardBgColor: #1C4E80;
+  --selectedTab: #2e5985;
+  --headerColor: #2e5985;
+  --hoverStateColor: #2e5985;
+  --headingShadowEffect: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset";
+  --colorforwhite : white;
+  --font-family: var(--fontfamily) !important;
+  --color:black ;
+  --headingShadowEffect: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset";
+}
+.App {
+  background: #f9f5fa !important;
+  display: block;
+  height: 100%;
+  min-height: 100vh;
+  color:var(--color) !important ;
+}
+
+.card {
+  background: var(--activeStateColor) !important;
+  margin: 10px 0px;
+  padding: 15px;
+  border: 1px solid #edeeee;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.query {
+  border: 1px solid #edeeee;
+  font-size: 1rem;
+  font-family: var(--fontfamily) !important;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  opacity: 0.8;
+}
+
+.chart-div {
+  display: flex;
+}
+
+.clear-btn {
+  background: #f9f5fa !important;
+  color: var(--dashboardBgColor) !important;
+  height: 40px;
+  width: 60px;
+  border: none;
+  margin-top: 10px;
+  float: right;
+  cursor: pointer;
+}
+
+.query-btn {
+  color: var(--color) !important;
+  height: 40px;
+  width: 60px;
+  border: none;
+  margin-top: 10px;
+  float: right;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  border-radius: 25%;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dashboardBgColor) !important;
+  border-radius: 25px;
+  border: 3px solid var(--dashboardBgColor);
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--dashboardBgColor);
+  width: 100vw;
+  color: var(--colorforwhite);
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.main1 {
+  padding-top: 24px !important;
+  padding-left: unset !important;
+  padding-bottom: unset !important;
+  padding-right: unset !important;
+}
+.main2 {
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  bottom: 55px;
+  left: 0px;
+  right: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+   /* IE and Edge */
+  scrollbar-width: none; 
+  /* Firefox */
+}
+.main2::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.toggleButton {
+  height: 30px;
+  width: 80px;
+  border: none;
+  font-size: 14px;
+  background-color: green;
+  color: var(--colorforwhite);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0;
+}
+.toggle-close {
+  background-color: red;
+}
+.apexcharts-svg,
+.apexcharts-zoomable {
+  height: 80vh !important;
+}
+
+.makeStyles-drawerClose-17{
+  width:57px !important
+}
+
+.div-root-21{
+  min-height: 50 !important;
+}
+.makeStyles-toolbar-18 {
+  min-height: 50px !important;
+}
+.MuiList-padding{
+  padding: 0 !important
+}
+.MuiDialog-paperWidthXs{
+  max-width: 444px !important;
+  bottom: 21px !important;
+  overflow:hidden !important;
+}
+iframe#webpack-dev-server-client-overlay {
+  display: none;
+}
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 40px !important;
+}
+.MuiAccordionSummary-root {
+  min-height: 40px !important;
+}
+.MuiAccordion-root.Mui-expanded {
+  margin-top: 0px !important;
+}
+.MuiAccordionDetails-root {
+  padding: 0px 10px 0px !important;
+}
+.panel-head {
+  padding: 0 !important;
+  background: var(--selectedTab);
+  min-height: 35px;
+}
+.MuiButton-root {
+  border-radius: 0px !important;
+}
+.MuiOutlinedInput-root {
+  border-radius: 0 !important;
+}
+.ag-center-cols-viewport {
+  overflow-x: hidden !important;
+}
+.MuiDialogActions-root {
+  position: relative !important;
+  padding: 0px 14px 6px 0px !important;
+  right: 11px !important;
+}
+.MuiDialogTitle-root {
+  padding: 10px 22px !important;
+}
+.MuiTypography-h6 {
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+.Toastify__toast {
+  border-radius: 0 !important;
+}
+.ag-cell {
+  text-align: center;
+}
+.ag-header-cell-label {
+  justify-content: center;
+}
+.ag-theme-alpine {
+  --ag-foreground-color: rgb(0, 0, 0);
+}

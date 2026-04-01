@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  color: var(--color) !important;
+  font-family: var(--fontfamily) !important;
+  font-size: var(--fontsize) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    touch-action: none; 
+    overflow: hidden; 
+    height: 100vh; 
+    
+    
+}
+
+code {
+  font-family: var(--fontfamily) !important;
+  font-size: var(--fontsize) !important;
+}
+.Toastify__progress-bar--success {
+  background-color: var(--dashboardBgColor)!important;
+}
+.Toastify__toast-icon {
+  color: var(--dashboardBgColor)!important;
+}
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  color: var(--dashboardBgColor)!important;
+}

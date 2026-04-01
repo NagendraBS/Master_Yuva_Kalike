@@ -29,3 +29,10 @@ Document/TRAININGS/**/*.tgz
 *.gz
 *.zip
 Document/TRAININGS/**
+node_modules/
+node_modules/
+target/
+*.class
+*.log
+.idea/
+.settings/
