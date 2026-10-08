@@ -38,6 +38,7 @@ class PrintJob implements Runnable{
 	String name;
 	
 	public PrintJob(String name) {
+
 		this.name = name;
 	}
 	

@@ -1,0 +1,77 @@
+C:\Users\nmurthy\Downloads\kafka>kafka-storage.bat random-uuid
+
+C:\Users\nmurthy\Downloads\kafka>bin\windows\kafka-storage.bat format --standalone -t JliweQWjQDKrWj-QWDL_7w -c config\server.properties
+
+JliweQWjQDKrWj-QWDL_7w  =   UUID Key
+
+C:\Users\nmurthy\Downloads\kafka>set "KAFKA_HEAP_OPTS=-Xms512M -Xmx1G"
+
+C:\Users\nmurthy\Downloads\kafka>bin\windows\kafka-server-start.bat config\server.properties
+
+
+listeners = [PLAINTEXT://:9092, CONTROLLER://:9093]
+
+
+Kafka is running successfully! Keep that Command Prompt open.
+
+
+Now test sending and receiving a message.
+
+
+1. Create a topic — open a new Command Prompt and run:
+
+C:\Users\nmurthy\Downloads\kafka>bin\windows\kafka-topics.bat --create --topic practice-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+Topic Created Successfully
+
+
+2. Start the producer in this window:
+
+C:\Users\nmurthy\Downloads\kafka>bin\windows\kafka-console-producer.bat --topic practice-topic --bootstrap-server localhost:9092
+2026-10-08T05:43:59.679525600Z main ERROR Reconfiguration failed: No configuration found for '764c12b6' at 'null' in 'null'
+
+
+> Hello Kafka !
+
+The producer will show another > so you can enter more messages.
+
+
+
+Keep this window and the Kafka server open. In a new Command Prompt, start the consumer:
+
+cd /d C:\Users\nmurthy\Downloads\kafka
+bin\windows\kafka-console-consumer.bat --topic practice-topic --from-beginning --bootstrap-server localhost:9092
+
+You should see:
+
+Hello Kafka !
+
+
+
+To restart, open three Command Prompt windows and follow this order.
+
+1. Start Kafka — first window
+
+cd /d C:\Users\nmurthy\Downloads\kafka
+set "KAFKA_HEAP_OPTS=-Xms512M -Xmx1G"
+bin\windows\kafka-server-start.bat config\server.properties
+
+
+Wait until you see Kafka Server started. Keep this window open.
+
+2. Start the producer — second window
+
+cd /d C:\Users\nmurthy\Downloads\kafka
+bin\windows\kafka-console-producer.bat --topic practice-topic --bootstrap-server localhost:9092
+
+
+At the > prompt, type messages and press Enter.
+
+3. Start the consumer — third window
+
+cd /d C:\Users\nmurthy\Downloads\kafka
+bin\windows\kafka-console-consumer.bat --topic practice-topic --from-beginning --bootstrap-server localhost:9092
+
+This reads the retained messages from the beginning and then waits for new messages. To receive only new messages, omit --from-beginning and start the consumer before sending them.
+
+You do not need to generate the UUID, format storage, or create practice-topic again.
