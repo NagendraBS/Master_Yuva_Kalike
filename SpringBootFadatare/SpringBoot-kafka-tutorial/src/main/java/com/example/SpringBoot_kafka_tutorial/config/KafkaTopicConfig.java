@@ -16,4 +16,13 @@ public class KafkaTopicConfig {
     }
 
 
+    // This Bean Is Created to handle The Json Type Message Data
+    @Bean
+    public NewTopic javaGuidesJsonTopic(){
+
+        return TopicBuilder.name("javaguides_json")
+                .build();  // To Build The Topic
+    }
+
+
 }
