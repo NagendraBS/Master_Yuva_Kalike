@@ -12,9 +12,9 @@ import javax.print.DocFlavor;
 @Service
 public class JsonKafkaConsumer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonKafkaProducer.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonKafkaConsumer.class);
 
-    @KafkaListener(topics= "javaguides_json", groupId = "myGroup")
+    @KafkaListener(topics="${spring.kafka.topic-json.name}", groupId ="${spring.kafka.consumer.group-id}")
     public void consume(User user){
 
             LOGGER.info(String.format("JSON Message Received -> %s", user.toString()));
