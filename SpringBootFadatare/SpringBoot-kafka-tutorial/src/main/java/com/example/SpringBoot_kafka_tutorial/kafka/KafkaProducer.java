@@ -22,7 +22,7 @@ public class KafkaProducer {
 
     public void sendMessage (String message){
 
-        LOGGER.info(String.format("Message Sent %s ", message));
+        LOGGER.info(String.format("Message Sent -> %s ", message));
         kafkaTemplate.send("javaguides",message);
     }
 
