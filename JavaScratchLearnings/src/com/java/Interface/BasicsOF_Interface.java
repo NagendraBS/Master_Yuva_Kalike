@@ -15,7 +15,7 @@ class TestClass implements testInterface{
 	
 	// Implementing the capabilities of Interface
 	public void display() {
-		System.out.println("GalaxE and Enadav Company");
+		System.out.println("GalaxE and Endava Company");
 	}
 	
 }
